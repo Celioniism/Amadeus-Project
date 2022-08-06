@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://i.imgur.com/jsnIp5h.png" style="width:125px; padding: 20px;"></img>
+    <img src="https://i.imgur.com/jsnIp5h.png" style="width:225px; padding: 20px;"></img>
 	<h1 align="center">Stock App</h1>
     <p align="center">
     </p>
