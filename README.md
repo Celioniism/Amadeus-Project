@@ -16,6 +16,6 @@ Data is sent through Ajax requests. Data is only updated and calculated through 
 <p>
 Sorting uses a few scripts to see if the list is already being sorted, what type of sort should be done, and what column should be sorted. The HTML interacts with angular’s NG calls and allows for a dynamic feel.  
 </p>
-<h1> Changing prices:</h1>
+<h1> Changing prices:</h1><a> (image is of older UI from day 2 of development) </a>
   <img src="https://i.imgur.com/HXiAkGU.png"> </img>
   <img src="https://i.imgur.com/3ZpjJby.png"> </img>
