@@ -19,3 +19,5 @@ Sorting uses a few scripts to see if the list is already being sorted, what type
 <h1> Changing prices:</h1><a> (image is of older UI from day 2 of development) </a>
   <img src="https://i.imgur.com/HXiAkGU.png"> </img>
   <img src="https://i.imgur.com/3ZpjJby.png"> </img>
+  <img src="https://i.imgur.com/VwMtuq9.png"> </img>
+
