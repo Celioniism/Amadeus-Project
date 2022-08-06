@@ -1,0 +1,88 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style type="text/css">
+    .word-wrap {
+        text-align: justify;
+    }
+
+    .word-wrap td {
+        word-wrap: break-word;
+    }
+
+    .CalendarBox {
+        padding-top: 15px;
+        padding-bottom: 30px;
+    }
+
+    .divisor {
+        border-right: 1px solid black;
+        width: 160px;
+        height: 28px;
+        background: url('https://i.imgur.com/jsnIp5h.png');
+        background-repeat: no-repeat;
+        background-size: 100px, auto, 100%;
+        background-position: center;
+        background-color: #343c44;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        vertical-align: middle;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    tr:nth-child(even) {
+        background-color: #C2E1F9;
+    }
+
+    .heading {
+        background-color: #8f8f8f;
+    }
+
+    .odd {
+        background-color: #D9D9D9;
+    }
+
+    .even {
+        background-color: #CCCCCC;
+    }
+</style>
+
+<body class="background">
+    <div class="container-lg">
+        <div class="CalendarBox">
+            <table class="table table-striped">
+                <thead class="heading" style="color: black">
+                    <th class="divisor" styule="background-color:#343c44" scope="col"></th>
+                    <th scope="col" (click)="ticker()">Ticker {{SortType === 1 && sortType === "ticker" ? "▼" : ""}} {{SortType === 2 && sortType === "ticker" ? "▲" : ""}} </th>
+                    <th scope="col" (click)="name()">Name {{SortType === 1 && sortType === "name" ? "▼" : ""}} {{SortType === 2 && sortType === "name" ? "▲" : ""}} </th>
+                    <th scope="col" (click)="price()">Current Value {{SortType === 1 && sortType === "price" ? "▼" : ""}} {{SortType === 2 && sortType === "price" ? "▲" : ""}}</th>
+                    <th scope="col" (click)="changes()">Change {{SortType === 1 && sortType === "change" ? "▼" : ""}} {{SortType === 2 && sortType === "change" ? "▲" : ""}}</th>
+                    <th scope="col" (click)="changePercents()">Percent Change {{SortType === 1 && sortType === "changepercent" ? "▼" : ""}} {{SortType === 2 && sortType === "changepercent" ? "▲" : ""}}</th>
+                </thead>
+                <tbody *ngFor="let stock of Stocks; let i = index; let even = even; let odd = odd">
+                    <tr class="">
+                        <th [ngClass]="{ odd: odd, even: even }" scope="row"><a [ngStyle]="{'color': Colors[i]}">██████</a></th>
+                        <td [ngClass]="{ odd: odd, even: even }">{{stock.symbol}}</td>
+                        <td [ngClass]="{ odd: odd, even: even }">{{stock.companyName}}</td>
+                        <td [ngClass]="{ odd: odd, even: even }">${{stock.price | number:'1.1-2' }}</td>
+                        <td [ngClass]="{ odd: odd, even: even }"> <a [ngStyle]="{'color': Colors[i]}">${{stock.changes | number:'1.1-2'}}</a></td>
+                        <td [ngClass]="{ odd: odd, even: even }"> <a [ngStyle]="{'color': Colors[i]}"> {{stock.changePercent| number:'1.1-2'}}% </a> </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+        <div *ngIf="!Stocks[0]">
+            <h1>No stock history to display </h1>
+        </div>
+    </div>
+
+
+</body>
